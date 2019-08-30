@@ -1,0 +1,15 @@
+[
+{"name": "Inputs and Outputs", 
+  "parameters": ["data.file", "output.filename" ]},
+
+
+{"name":"Transition Gene Detection", "parameters":["root", "preference","percentile_expr","flag_use_precomputed", "cutoff_spearman", "cutoff_logfc"]},
+
+
+
+{"name": "Plotting", "hidden": false,
+  "parameters": ["num_genes", "figure.width", "figure.height", "figure.legend.num.columns"]}
+
+]
+
+

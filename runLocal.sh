@@ -1,0 +1,1 @@
+docker run  -v ${PWD}:$PWD -w $PWD/job_1 genepattern/stream_detecttransitiongenes python /stream/transition_command_line.py  -m $PWD/test/data/stream_epg_result.pkl -of marker  -fig_width 10 -fig_height 7 -fig_legend_ncol 3 -root S3  -preference S4,S1 -num_genes 15  -percentile_expr 95 -cutoff_spearman 0.4 -cutoff_logfc 0.25 
