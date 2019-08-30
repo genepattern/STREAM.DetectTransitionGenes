@@ -8,7 +8,7 @@
 
 
 {"name": "Plotting", "hidden": false,
-  "parameters": ["num_genes", "figure.width", "figure.height", "figure.legend.num.columns"]}
+  "parameters": ["num_genes", "figure.width", "figure.height"]}
 
 ]
 

@@ -46,7 +46,6 @@ def main():
     parser.add_argument("-of","--of",dest="output_filename_prefix", default="StreamiFSOutput",  help="output file name prefix")
     parser.add_argument("-fig_width",dest="fig_width", type=int, default=8, help="")
     parser.add_argument("-fig_height",dest="fig_height", type=int, default=8, help="")
-    parser.add_argument("-fig_legend_ncol",dest="fig_legend_ncol", type=int, default=None, help="")
     parser.add_argument("-percentile_expr",dest="percentile_expr", type=int, default=95, help="")
     parser.add_argument("-flag_use_precomputed",dest="flag_use_precomputed", action="store_true", help="")
     parser.add_argument("-root",dest="root", default=None, help="")
@@ -54,6 +53,7 @@ def main():
     parser.add_argument("-cutoff_spearman",dest="cutoff_spearman", type=float, default=0.4, help="")
     parser.add_argument("-cutoff_logfc",dest="cutoff_logfc", type=float, default=0.25, help="")
     parser.add_argument("-num_genes",dest="num_genes", type=int, default=15, help="")
+    parser.add_argument("-n_jobs",dest="n_jobs", type=int, default=8, help="")
 
     args = parser.parse_args()
     
@@ -61,13 +61,10 @@ def main():
 
     adata = st.read(file_name=args.input_filename, file_format='pkl', experiment='rna-seq', workdir=workdir)
     preference = args.preference.split(',')
-    st.detect_transistion_genes(adata,cutoff_spearman=args.cutoff_spearman,cutoff_logfc=args.cutoff_logfc,percentile_expr=args.percentile_expr,n_jobs=8,
+    st.detect_transistion_genes(adata,cutoff_spearman=args.cutoff_spearman,cutoff_logfc=args.cutoff_logfc,percentile_expr=args.percentile_expr,n_jobs=args.n_jobs,
                             use_precomputed=args.flag_use_precomputed, root=args.root,preference=preference)
     st.plot_transition_genes(adata,num_genes=args.num_genes,save_fig=True,fig_path="./",fig_size=(args.fig_width, args.fig_height))
    
-
-
- 
     st.write(adata,file_name=(args.output_filename_prefix + '_stream_result.pkl'),file_path='./',file_format='pkl') 
 
     print('Finished computation.')

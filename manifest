@@ -6,7 +6,7 @@ LSID=urn:lsid:broad.mit.edu:cancer.software.genepattern.module.analysis:00404:99
 author=Ted Liefeld, UCSD School of Medicine.
 categories=SingleCell
 
-commandLine=python /stream/transition_command_line.py -m <data.file> -of <output.filename> <figure.width> <figure.height> <figure.legend.num.columns> <root> <preference>  <percentile_expr> <flag_use_precomputed> <cutoff_spearman> <cutoff_logfc> <num_genes>  
+commandLine=python /stream/transition_command_line.py -m <data.file> -of <output.filename> <figure.width> <figure.height> <root> <preference>  <percentile_expr> <flag_use_precomputed> <cutoff_spearman> <cutoff_logfc> <num_genes> -n_jobs <job.cpuCount> 
 
 cpuType=any
 description=
@@ -50,17 +50,20 @@ p2_value=
 
 p3_MODE=
 p3_TYPE=TEXT
-p3_default_value=3
-p3_description=The number of columns that the legend has.
+p3_default_value=
+p3_description=
 p3_fileFormat=
 p3_flag=
-p3_name=figure.legend.num.columns
-p3_numValues=1..1
-p3_optional=
+p3_name=flag_use_precomputed
+p3_numValues=0..1
+p3_optional=on
 p3_prefix=
-p3_prefix_when_specified=-fig_legend_ncol  
+p3_prefix_when_specified=
 p3_type=java.lang.String
-p3_value=
+p3_value=\=Off;-flag_use_precomputed \=Use precomputed gene list
+
+
+
 
 p4_MODE=
 p4_TYPE=TEXT
