@@ -1,0 +1,25 @@
+#
+# ant -f ${GPUNIT_HOME}/build.xml -Dgpunit.diffStripTrailingCR="--strip-trailing-cr" -Dgp.host="beta.genepattern.org" -Dgp.url="https://beta.genepattern.org" -Dgp.user="ted-dev" -Dgp.password="" -Dgpunit.testfolder=`pwd` gpunit
+#
+name: STREAM.DetectTransitionGenes
+module: STREAM.DetectTransitionGenes
+params: 
+    "data.file": "./data/stream_epg_result.pkl" 
+    "output.filename": "test"
+    "root": "S3"
+    "preference": "S1,S3"
+assertions:
+    jobStatus: success
+    files:
+        "test_stream_result.pkl":  !!null
+        "transition_genes/transition_genes_S1_S2.tsv": !!null
+        "transition_genes/transition_genes_S3_S1.tsv": !!null
+        "transition_genes/transition_genes_S3_S4.tsv": !!null
+        "transition_genes/transition_genes_S3_S5.tsv": !!null
+        "transition_genes_S1_S0.pdf": !!null
+        "transition_genes_S1_S2.pdf": !!null
+        "transition_genes_S3_S1.pdf": !!null
+        "transition_genes_S3_S5.pdf": !!null
+        "transition_genes_S3_S4.pdf": !!null
+
+

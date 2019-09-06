@@ -3,12 +3,12 @@
   "parameters": ["data.file", "output.filename" ]},
 
 
-{"name":"Transition Gene Detection", "parameters":["root", "preference","percentile_expr","flag_use_precomputed", "cutoff_spearman", "cutoff_logfc"]},
+{"name":"Transition Gene Detection", "parameters":["root", "preference","percentile.expr","use.precomputed", "cutoff.spearman", "cutoff.logfc"]},
 
 
 
 {"name": "Plotting", "hidden": false,
-  "parameters": ["num_genes", "figure.width", "figure.height"]}
+  "parameters": ["num.genes", "figure.width", "figure.height"]}
 
 ]
 
