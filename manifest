@@ -9,13 +9,13 @@ categories=SingleCell
 commandLine=python /stream/transition_command_line.py -m <data.file> -of <output.filename> <figure.width> <figure.height> <root> <preference>  <percentile.expr> <use.precomputed> <cutoff.spearman> <cutoff.logfc> <num.genes> -n_jobs <job.cpuCount> 
 
 cpuType=any
-description=
+description=Detects the transition genes for each branch of a STREAM trajectory.
 fileFormat=pkl
 language=any
 minGenePatternVersion=3.9.13
 name=STREAM.DetectTransitionGenes
 os=any
-job.docker.image=genepattern/stream_detecttransitiongenes
+job.docker.image=genepattern/stream_detecttransitiongenes:0.2
 job.cpuCount=2
 job.memory=8 Gb
 job.walltime=1\:00\:00
