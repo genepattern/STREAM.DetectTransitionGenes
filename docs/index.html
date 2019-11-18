@@ -48,14 +48,9 @@
 
 <p>STREAM.DetectTransitionGenes is used to detect marker genes for each transition.	</p>
 
-<p><h5>Huidong to add detail explaining this part of the STREAM pipeline</h5></p>
-
-<p>&nbsp;</p>
-
 <h2>Algorithm</h2>
 <p>
-<h5>Huidong to cover details of this portion of the analysis</h5>
-</p>
+For each branch Bi and for each gene E we first scale the gene expression values to [0,1] for convenience. Then we check if the candidate gene has a reasonable dynamic range considering cells close to the start and end points. To this end, we consider the fold change in average gene expressions of the first 20% and the last 80% of the cells based on the inferred pseudotime. If the difference is greater than a specified threshold (the default log2 fold change value is 0.25), we then calculate Spearman’s rank correlation between inferred pseudotime and gene expression of all the cells along Bi. Genes with Spearman’s correlation coefficient above a specified threshold (0.4 by default) are identified and reported as transition genes.</p>
 
 <h2>References</h2>
 <p>H Chen, L Albergante, JY Hsu, CA Lareau, GL Bosco, J Guan, S Zhou, AN Gorban, DE Bauer, MJ Aryee, DM Langenau, A Zinovyev, JD Buenrostro, GC Yuan, L Pinello&nbsp;<a href="https://www.nature.com/articles/s41467-019-09670-4">Single-cell trajectories reconstruction, exploration and mapping of omics data with STREAM. </a> Nature Communications, volume 10, Article number: 1903 (2019)</p>
